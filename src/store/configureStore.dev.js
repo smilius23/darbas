@@ -6,7 +6,6 @@ import logger from 'redux-logger';
 
 import rootReducer from '../reducers';
 
-
 const finalCreateStore = compose(
   applyMiddleware(thunkMiddleware, apiMiddleware, reduxImmutableStateInvariant(), logger()),
   window.devToolsExtension ? window.devToolsExtension() : f => f

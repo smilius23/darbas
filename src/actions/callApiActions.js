@@ -12,7 +12,7 @@ function postData(link, actionTypes, apiBody) {
   }
 }
 
-function getData(link, actionTypes, header) {
+export function getData(link, actionTypes, header) {
   return {
     [CALL_API]: {
       endpoint: link,
