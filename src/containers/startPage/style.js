@@ -1,8 +1,9 @@
 export default {
   startPage: {
-    sections: {
-      display: 'flex',
-      flexWrap: 'wrap'
-    }
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    margin: '0 auto'
   }
 }

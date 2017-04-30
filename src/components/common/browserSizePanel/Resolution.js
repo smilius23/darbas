@@ -31,7 +31,7 @@ class Resolution extends Component {
   }
 
   componentWillMount = ()=>{
-        this.updateDimensions();
+    this.updateDimensions();
   }
   componentDidMount = ()=>{
     window.addEventListener('resize', this.updateDimensions);
