@@ -20,7 +20,6 @@ On wanted folder in terminal command line write:
 * Webpack
 * React
 * Redux
-* D3
 * Babel
 * Eslint
 
@@ -32,16 +31,6 @@ On wanted folder in terminal command line write:
 Run development environment with Webpack hot browser reloading. Started server and open default browser with link: http://localhost:3005
 
 `> npm run dev`
-
-### For production:
-
-Run bild. It create 'dist' folder and creating index.html, and generating minified 'bundle_darbas.js' files.
-
-`> npm run build`
-
-Run server that’s reading code from generated 'dist' folder.
-
-`> npm start`
 
 ### Run tests
 
