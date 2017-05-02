@@ -21,8 +21,6 @@ export default function reducer(state = initialState.dribbble, action) {
         console.dir(colection);
         stateItems.concat(colection);
         console.dir(stateItems);
-
-
         //stateItems.push.apply(stateItems, colection)
         //colection.push.apply(colection, state.items)
        } else {
