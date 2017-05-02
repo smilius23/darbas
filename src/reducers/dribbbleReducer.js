@@ -16,13 +16,7 @@ export default function reducer(state = initialState.dribbble, action) {
         }
       });
       if (state.items){
-        stateItems = state.items;
-        console.log('----------------');
-        console.dir(colection);
-        stateItems.concat(colection);
-        console.dir(stateItems);
-        //stateItems.push.apply(stateItems, colection)
-        //colection.push.apply(colection, state.items)
+        stateItems = state.items.concat(colection);
        } else {
         stateItems = colection;
       }

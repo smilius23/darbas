@@ -27,11 +27,10 @@ class StartPage extends React.Component {
     const sHeight = document.documentElement.clientHeight
     const PageIndex = Math.ceil(window.scrollY/sHeight)+1;
     if(PageIndex > this.state.page){
-      const per_page = this.imagesPerPage();
+      const per_page = this.state.per_page//this.imagesPerPage();
       const apiUrl = this.state.apiUrl;
       const token = this.state.token;
       const url = apiUrl+'?'+token+'&page='+PageIndex+'&per_page='+per_page;
-      console.log(url);
        this.props.actions.getData(
          url,
          dribbbleApiTypes
