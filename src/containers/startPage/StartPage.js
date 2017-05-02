@@ -17,12 +17,30 @@ class StartPage extends React.Component {
       scroll: window.scrollY,
       apiUrl: 'https://api.dribbble.com/v1/shots',
       token: 'access_token=4b866f453919eda6771f607d0ce40f442a0c7c5e307b40bb0e6344ef288dff03',
-      page: 1,
+      page: 0,
       per_page: 0
     }
   }
 
   handleScroll=()=>{
+    const sWidth = document.body.clientWidth;
+    const sHeight = document.documentElement.clientHeight
+    const PageIndex = Math.ceil(window.scrollY/sHeight)+1;
+    if(PageIndex > this.state.page){
+      const per_page = this.imagesPerPage();
+      const apiUrl = this.state.apiUrl;
+      const token = this.state.token;
+      const url = apiUrl+'?'+token+'&page='+PageIndex+'&per_page='+per_page;
+      console.log(url);
+       this.props.actions.getData(
+         url,
+         dribbbleApiTypes
+       );
+      this.setState({
+        page: PageIndex
+      });
+    }
+
     this.setState({
       scroll: window.scrollY
     });
@@ -48,8 +66,6 @@ class StartPage extends React.Component {
     const token = this.state.token;
     const page = this.state.page;
     const per_page = this.imagesPerPage();
-
-
     const url = apiUrl+'?'+token+'&page='+page+'&per_page='+per_page;
     this.props.actions.getData(
       url,

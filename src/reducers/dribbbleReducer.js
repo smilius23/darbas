@@ -9,16 +9,29 @@ export default function reducer(state = initialState.dribbble, action) {
         status: 'started'
       };
     case dribbbleApiTypes.SUCCESS:
-      let colection = action.payload.map((item, key)=>{
+      let stateItems = [];
+      let colection = action.payload.map((item)=>{
         return {
-          key,
           images: item.images
         }
       });
+      if (state.items){
+        stateItems = state.items;
+        console.log('----------------');
+        console.dir(colection);
+        stateItems.concat(colection);
+        console.dir(stateItems);
+
+
+        //stateItems.push.apply(stateItems, colection)
+        //colection.push.apply(colection, state.items)
+       } else {
+        stateItems = colection;
+      }
       return{
         ...state,
         status: 'done',
-        items: colection
+        items: stateItems
       };
     case dribbbleApiTypes.FAILURE:
       return{
