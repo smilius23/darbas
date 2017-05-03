@@ -1,6 +1,6 @@
 #Darbas parodyti zinias
 
-## Before application settup
+## Before application setup
 In your computer you must have installed:
 * Node.js (https://nodejs.org/en/) recomended version 6.
 * Git (https://git-scm.com/).
