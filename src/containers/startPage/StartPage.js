@@ -46,8 +46,10 @@ class StartPage extends React.Component {
   }
 
   imagesPerPage(){
-    const sWidth = document.body.clientWidth;
-    const sHeight = document.documentElement.clientHeight
+    const sWidth = screen.width;//document.body.clientWidth;
+    const sHeight = screen.height;//document.documentElement.clientHeight
+    console.dir(sWidth);
+    console.dir(sHeight);
     const imageSizeX = 200;
     const imageSizeY = 154;
     const margin = sWidth * 1 / 100;
